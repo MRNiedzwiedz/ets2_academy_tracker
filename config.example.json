@@ -1,0 +1,7 @@
+{
+  "data_dir": "C:/Users/YOUR_NAME/AppData/Local/ETS2AcademyTracker",
+  "scan_seconds": 5.0,
+  "debounce_seconds": 1.0,
+  "bsii_command": [],
+  "log_level": "INFO"
+}

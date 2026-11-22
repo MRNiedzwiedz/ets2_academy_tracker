@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ets2-academy-tracker"
+version = "1.0.0"
+description = "Local Windows tracker for ETS2 Driving Academy"
+requires-python = ">=3.12,<3.13"
+dependencies = ["PySide6>=6.7,<7", "watchdog>=4,<8", "cryptography>=42,<51", "openpyxl>=3.1,<4", "tzdata>=2024.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pyinstaller>=6,<7"]
+
+[project.scripts]
+academy-tracker = "main:main"
+
+[tool.setuptools]
+py-modules = ["main", "config"]
+
+[tool.setuptools.packages.find]
+include = ["academy*", "database*", "monitoring*", "reports*", "ui*"]
+
+[tool.setuptools.package-data]
+database = ["schema.sql"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
